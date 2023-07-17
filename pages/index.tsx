@@ -1,4 +1,11 @@
-/** Add your relevant code here for the issue to reproduce */
-export default function Home() {
-  return null
+export default function Home({title}) {
+  return <h1>{title.map(x => x)}</h1>
+}
+
+export const getStaticProps = async () => {
+	return {
+		props: {
+			title: 'Hello World!'
+		}
+	}
 }
